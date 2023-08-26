@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>com.study</groupId>
+    <artifactId>nuwa-platform-bom</artifactId>
+    <name>${project.artifactId}</name>
+    <version>${nuwa.project.version}</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!-- jdk版本1.8 -->
+        <java.version>1.8</java.version>
+        <!-- maven-compiler-plugin插件版本，Java代码编译 -->
+        <maven.plugin.version>3.8.1</maven.plugin.version>
+        <!-- maven编译时指定编码UTF-8 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <!-- 项目统一字符集编码UTF-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 项目统一字符集编码UTF-8 -->
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- nuwa项目统一设置版本号 -->
+        <nuwa.project.version>1.0-SNAPSHOT</nuwa.project.version>
+        <!-- mysql数据库驱动 -->
+        <mysql.connector.version>8.0.17</mysql.connector.version>
+        <!-- postgresql数据库驱动 -->
+        <postgresql.connector.version>9.1-901.jdbc4</postgresql.connector.version>
+        <!-- 数据库连接池Druid -->
+        <druid.version>1.1.23</druid.version>
+        <!-- Mybatis Plus增强工具 -->
+        <mybatis.plus.version>3.4.0</mybatis.plus.version>
+        <!-- Knife4j Swagger2文档 -->
+        <knife4j.version>3.0.1</knife4j.version>
+        <!-- hutool Java常用工具包 -->
+        <hutool.version>5.5.1</hutool.version>
+        <!-- Spring Cloud Alibaba -->
+        <spring.cloud.alibaba>2.2.3.RELEASE</spring.cloud.alibaba>
+        <!-- redisson Redis客户端工具 -->
+        <redisson.version>3.13.6</redisson.version>
+        <!-- Mybatis Plus增强工具代码生成 -->
+        <mybatis.plus.generator.version>3.5.1</mybatis.plus.generator.version>
+        <!-- AJ-Captcha滑动验证码 -->
+        <captcha.version>1.2.7</captcha.version>
+        <!-- Easy-Captcha图形验证码 -->
+        <easy.captcha.version>1.6.2</easy.captcha.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- nuwa基础底层定义包 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-base</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- nuwa数据库驱动及连接池 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-db</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- nuwa mybatis-plus -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-mybatis</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- nuwa swagger2-knife4j -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-swagger</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- nuwa boot自定义扩展 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-boot</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- nuwa cloud自定义扩展 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-cloud</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- gitegg cache自定义扩展 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-cache</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-redis</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- gitegg oauth2自定义扩展 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-oauth2</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- gitegg 验证码自定义扩展 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-captcha</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- mysql数据库驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+            <!-- postgresql数据库驱动 -->
+            <dependency>
+                <groupId>postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.connector.version}</version>
+            </dependency>
+            <!-- 数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- Mybatis Plus增强工具 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <!-- Swagger2 knife4j bom方式引入 -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-dependencies</artifactId>
+                <version>${knife4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Cloud Alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Mybatis Plus代码生成工具 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.generator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!-- captcha 滑动验证码-->
+            <dependency>
+                <groupId>com.github.anji-plus</groupId>
+                <artifactId>captcha-spring-boot-starter</artifactId>
+                <version>${captcha.version}</version>
+            </dependency>
+            <!-- easy-captcha 图形验证码-->
+            <dependency>
+                <groupId>com.github.whvcse</groupId>
+                <artifactId>easy-captcha</artifactId>
+                <version>${easy.captcha.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
