@@ -8,6 +8,8 @@ package com.study.platform.base.constant;
  */
 public class TokenConstant {
 
+    public static final String GENDER="gender";
+
     public final static String SIGN_KEY="myjszl";
 
     public static final String AUTH_HEADER = "Auth";

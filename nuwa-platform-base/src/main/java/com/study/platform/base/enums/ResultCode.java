@@ -7,7 +7,7 @@ package com.study.platform.base.enums;
  * @Description: 自定义返回码枚举
  * @date 2020年09月19日 下午11:49:45
  */
-public enum ResultCode implements IErrorCode{
+public enum ResultCode implements IErrorCode {
 
     /**
      * 成功
@@ -35,54 +35,19 @@ public enum ResultCode implements IErrorCode{
     NO_PERMISSION(403, "当前用户无该接口权限"),
 
     /**
-     * 操作失败
+     * 客户端认证失败
      */
-    FAILED(410, "操作失败"),
+    CLIENT_AUTHENTICATION_FAILED(408, "客户端认证失败"),
 
     /**
-     * 参数错误
+     * 不支持的认证模式
      */
-    PARAM_ERROR(411, "参数错误"),
+    UNSUPPORTED_GRANT_TYPE(409, "不支持的认证模式"),
 
     /**
-     * 参数错误-已存在
+     * 不支持的客户端权限
      */
-    INVALID_PARAM_EXIST(412, "请求参数已存在"),
-
-    /**
-     * 参数错误
-     */
-    INVALID_PARAM_EMPTY(413, "请求参数为空"),
-
-    /**
-     * 参数错误
-     */
-    PARAM_TYPE_MISMATCH(414, "参数类型不匹配"),
-
-    /**
-     * 参数错误
-     */
-    PARAM_VALID_ERROR(415, "参数校验失败"),
-
-    /**
-     * 参数错误
-     */
-    ILLEGAL_REQUEST(416, "非法请求"),
-
-    /**
-     * 验证码错误
-     */
-    INVALID_CAPTCHA_TYPE(417, "验证码类型不匹配"),
-
-    /**
-     * 验证码错误
-     */
-    INVALID_CAPTCHA(418, "验证码错误"),
-
-    /**
-     * 用户名或密码错误
-     */
-    INVALID_USERNAME_PASSWORD(419, "账号或密码错误"),
+    INVALID_SCOPE(410, "不支持的客户端权限"),
 
     /**
      *
@@ -132,7 +97,56 @@ public enum ResultCode implements IErrorCode{
     /**
      * 系统繁忙，请稍后重试
      */
-    SYSTEM_BUSY(429, "系统繁忙，请稍后重试");
+    SYSTEM_BUSY(429, "系统繁忙，请稍后重试"),
+    /**
+     * 操作失败
+     */
+    FAILED(430, "操作失败"),
+
+    /**
+     * 参数错误
+     */
+    PARAM_ERROR(431, "参数错误"),
+
+    /**
+     * 参数错误-已存在
+     */
+    INVALID_PARAM_EXIST(432, "请求参数已存在"),
+
+    /**
+     * 参数错误
+     */
+    INVALID_PARAM_EMPTY(433, "请求参数为空"),
+
+    /**
+     * 参数错误
+     */
+    PARAM_TYPE_MISMATCH(434, "参数类型不匹配"),
+
+    /**
+     * 参数错误
+     */
+    PARAM_VALID_ERROR(435, "参数校验失败"),
+
+    /**
+     * 参数错误
+     */
+    ILLEGAL_REQUEST(436, "非法请求"),
+
+    /**
+     * 验证码错误
+     */
+    INVALID_CAPTCHA_TYPE(437, "验证码类型不匹配"),
+
+    /**
+     * 验证码错误
+     */
+    INVALID_CAPTCHA(438, "验证码错误"),
+
+    /**
+     * 用户名或密码错误
+     */
+    INVALID_USERNAME_PASSWORD(439, "账号或密码错误");
 
     private final long code;
 
