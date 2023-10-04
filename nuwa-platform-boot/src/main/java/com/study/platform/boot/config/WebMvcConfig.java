@@ -12,14 +12,15 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 import com.study.platform.base.util.LocalDateTimeUtils;
+import com.study.platform.boot.common.resolver.CurrentUserMethodArgumentResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.*;
 import org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import com.study.platform.boot.common.resolver.CurrentUserMethodArgumentResolver;
 
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -36,6 +37,12 @@ import java.util.TimeZone;
  **/
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        WebMvcConfigurer.super.addResourceHandlers(registry);
+    }
+
 
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {

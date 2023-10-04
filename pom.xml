@@ -18,12 +18,12 @@
         <module>nuwa-platform-boot</module>
         <module>nuwa-platform-cloud</module>
         <module>nuwa-platform-base</module>
-        <module>nuwa-plateform-redis</module>
         <module>nuwa-platform-code-generator</module>
         <module>nuwa-platform-oauth2</module>
         <module>nuwa-platform-cache</module>
         <module>nuwa-platform-captcha</module>
         <module>nuwa-platform-redis</module>
+        <module>nuwa-platform-feign</module>
     </modules>
 
     <properties>

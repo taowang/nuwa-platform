@@ -27,8 +27,8 @@
         </dependency>
         <!-- OpenFeign 微服务调用解决方案-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <groupId>com.study</groupId>
+            <artifactId>nuwa-platform-feign</artifactId>
         </dependency>
         <!-- Sentinel 高可用流量防护组件 -->
         <dependency>

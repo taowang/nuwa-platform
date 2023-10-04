@@ -16,6 +16,7 @@
     <description>使用knife4j集成Swagger2</description>
 
     <dependencies>
+        <!--swagger-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>

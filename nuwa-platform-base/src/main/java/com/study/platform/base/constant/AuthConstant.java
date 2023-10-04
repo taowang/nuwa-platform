@@ -63,6 +63,8 @@ public class AuthConstant {
      */
     public static final String HEADER_USER = "User";
 
+    public static final String IP_ADDRESS = "ip_address";
+
     /**
      * Redis缓存权限规则key
      */

@@ -103,6 +103,11 @@
                 <artifactId>nuwa-platform-redis</artifactId>
                 <version>${nuwa.project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-feign</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
             <!-- gitegg oauth2自定义扩展 -->
             <dependency>
                 <groupId>com.study</groupId>
