@@ -52,11 +52,9 @@ public class SwaggerConfig {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 //是否启用swagger
                 .enable(enabled)
-                //.host("http://127.0.0.1:80/nuwa-system")
                 //分组名称(包名，模块名)
-                //.groupName(groupName)
                 .groupName("1.X版本")
-                //.useDefaultResponseMessages(false)
+                .useDefaultResponseMessages(false)
                 //展示在Swagger页面上的自定义工程描述信息
                 .apiInfo(apiInfo())
                 .pathMapping(pathMapping)
@@ -77,12 +75,12 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //描述信息
-                .description("Spring Cloud Swagger2 文档")
+                .description("Nuwa接口文档")
                 //可以通过swagger联系一个人，即联系方式
-                .contact(new Contact("wtt", "https://127.0.0.1:8001/doc.html", "864734049@qq.com"))
+                .contact(new Contact("wtt", "https://127.0.0.1/doc.html", "864734049@qq.com"))
                 //版本
                 .version("1.0.0")
-                .title("Spring Cloud Swagger2 文档")
+                .title("nuwa swagger文档")
                 .termsOfServiceUrl("www.nuwa.com")
                 .build();
     }
