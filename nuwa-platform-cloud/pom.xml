@@ -15,15 +15,9 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!-- Nacos 服务注册发现-->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <!-- Nacos 分布式配置-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <groupId>com.study</groupId>
+            <artifactId>nuwa-platform-nacos</artifactId>
         </dependency>
         <!-- OpenFeign 微服务调用解决方案-->
         <dependency>
@@ -32,8 +26,8 @@
         </dependency>
         <!-- Sentinel 高可用流量防护组件 -->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <groupId>com.study</groupId>
+            <artifactId>nuwa-platform-sentinel</artifactId>
         </dependency>
         <!-- 为了使用HttpServletRequest和HttpServletResponse -->
         <dependency>

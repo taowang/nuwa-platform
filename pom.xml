@@ -24,6 +24,8 @@
         <module>nuwa-platform-captcha</module>
         <module>nuwa-platform-redis</module>
         <module>nuwa-platform-feign</module>
+        <module>nuwa-platform-nacos</module>
+        <module>nuwa-platform-sentinel</module>
     </modules>
 
     <properties>

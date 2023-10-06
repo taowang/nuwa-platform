@@ -146,7 +146,9 @@ public enum ResultCode implements IErrorCode {
     /**
      * 用户名或密码错误
      */
-    INVALID_USERNAME_PASSWORD(439, "账号或密码错误");
+    INVALID_USERNAME_PASSWORD(439, "账号或密码错误"),
+
+    SERVER_FALLBACK(3001,"服务降级了........");
 
     private final long code;
 

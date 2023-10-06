@@ -92,7 +92,7 @@
                 <artifactId>nuwa-platform-cloud</artifactId>
                 <version>${nuwa.project.version}</version>
             </dependency>
-            <!-- gitegg cache自定义扩展 -->
+            <!-- nuwa cache自定义扩展 -->
             <dependency>
                 <groupId>com.study</groupId>
                 <artifactId>nuwa-platform-cache</artifactId>
@@ -108,13 +108,23 @@
                 <artifactId>nuwa-platform-feign</artifactId>
                 <version>${nuwa.project.version}</version>
             </dependency>
-            <!-- gitegg oauth2自定义扩展 -->
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-nacos</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.study</groupId>
+                <artifactId>nuwa-platform-sentinel</artifactId>
+                <version>${nuwa.project.version}</version>
+            </dependency>
+            <!-- nuwa oauth2自定义扩展 -->
             <dependency>
                 <groupId>com.study</groupId>
                 <artifactId>nuwa-platform-oauth2</artifactId>
                 <version>${nuwa.project.version}</version>
             </dependency>
-            <!-- gitegg 验证码自定义扩展 -->
+            <!-- nuwa 验证码自定义扩展 -->
             <dependency>
                 <groupId>com.study</groupId>
                 <artifactId>nuwa-platform-captcha</artifactId>

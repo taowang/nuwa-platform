@@ -15,7 +15,6 @@ import java.util.List;
  * @param <T>
  */
 @Data
-@ApiModel("通用分页响应类")
 public class PageResult<T> {
 
     @ApiModelProperty(value = "是否成功", required = true)
