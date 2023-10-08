@@ -15,22 +15,27 @@ spring:
           nacos:
             data-type: json # 默认提供两种内置的值，分别是 json 和 xml (不填默认是json)
             server-addr: 127.0.0.1:8848
+            namespace: ac59b1ea-e031-4aaf-a50e-2742b2f3da5f
             dataId: ${spring.application.name}-sentinel
-            groupId: DEFAULT_GROUP
+            groupId: SENTINEL_GROUP
             rule-type: flow #rule-type 配置表示该数据源中的规则属于哪种类型的规则(flow流控，degrade熔断降级，authority，system系统保护, param-flow热点参数限流, gw-flow, gw-api-group)
 
+#Ribbon配置
 ribbon:
   #请求连接的超时时间
   ConnectTimeout: 5000
   #请求处理/响应的超时时间
   ReadTimeout: 5000
-  #对所有操作请求都进行重试
-  OkToRetryOnAllOperations: true
+  #对所有操作请求都进行重试，如果没有实现幂等的情况下是很危险的,所以这里设置为false
+  OkToRetryOnAllOperations: false
   #切换实例的重试次数
-  MaxAutoRetriesNextServer: 0
+  MaxAutoRetriesNextServer: 5
   #当前实例的重试次数
-  MaxAutoRetries: 0
+  MaxAutoRetries: 5
+  #负载均衡策略
+  #NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 
+#Sentinel端点配置
 management:
   endpoints:
     web:
