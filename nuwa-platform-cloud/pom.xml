@@ -44,5 +44,9 @@
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.study</groupId>
+            <artifactId>nuwa-platform-redis</artifactId>
+        </dependency>
     </dependencies>
 </project>

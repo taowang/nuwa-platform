@@ -19,7 +19,11 @@ spring:
             dataId: ${spring.application.name}-sentinel
             groupId: SENTINEL_GROUP
             rule-type: flow #rule-type 配置表示该数据源中的规则属于哪种类型的规则(flow流控，degrade熔断降级，authority，system系统保护, param-flow热点参数限流, gw-flow, gw-api-group)
-
+  redis:
+    database: 1
+    port: 6379
+    host: 127.0.0.1
+    password: 810905
 #Ribbon配置
 ribbon:
   #请求连接的超时时间

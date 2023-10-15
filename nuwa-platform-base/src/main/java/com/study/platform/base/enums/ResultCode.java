@@ -148,7 +148,9 @@ public enum ResultCode implements IErrorCode {
      */
     INVALID_USERNAME_PASSWORD(439, "账号或密码错误"),
 
-    SERVER_FALLBACK(3001,"服务降级了........");
+    SERVER_FALLBACK(3001,"服务降级了........"),
+
+    NO_REPEATABLE_SUBMIT(3002,"请勿重复提交........");
 
     private final long code;
 
