@@ -25,10 +25,10 @@
             <artifactId>nuwa-platform-feign</artifactId>
         </dependency>
         <!-- Sentinel 高可用流量防护组件 -->
-        <dependency>
-            <groupId>com.study</groupId>
-            <artifactId>nuwa-platform-sentinel</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.study</groupId>-->
+<!--            <artifactId>nuwa-platform-sentinel</artifactId>-->
+<!--        </dependency>-->
         <!-- 为了使用HttpServletRequest和HttpServletResponse -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -40,10 +40,10 @@
             <artifactId>nuwa-platform-base</artifactId>
         </dependency>
         <!-- Sentinel 使用Nacos配置 -->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-nacos</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.csp</groupId>-->
+<!--            <artifactId>sentinel-datasource-nacos</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.study</groupId>
             <artifactId>nuwa-platform-redis</artifactId>

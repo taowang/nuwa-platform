@@ -33,6 +33,12 @@
             <groupId>com.study</groupId>
             <artifactId>nuwa-platform-feign</artifactId>
         </dependency>
+
+        <!-- spring boot 健康监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

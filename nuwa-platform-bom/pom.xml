@@ -52,6 +52,8 @@
         <captcha.version>1.2.7</captcha.version>
         <!-- Easy-Captcha图形验证码 -->
         <easy.captcha.version>1.6.2</easy.captcha.version>
+        <!-- spring-boot-admin 微服务监控-->
+        <spring.boot.admin.version>2.3.0</spring.boot.admin.version>
     </properties>
 
     <dependencyManagement>
@@ -198,6 +200,20 @@
                 <artifactId>easy-captcha</artifactId>
                 <version>${easy.captcha.version}</version>
             </dependency>
+
+            <!-- spring-boot-admin监控 服务端 https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-server -->
+<!--            <dependency>-->
+<!--                <groupId>de.codecentric</groupId>-->
+<!--                <artifactId>spring-boot-admin-starter-server</artifactId>-->
+<!--                <version>${spring.boot.admin.version}</version>-->
+<!--            </dependency>-->
+
+            <!-- spring-boot-admin监控 客户端 https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client -->
+<!--            <dependency>-->
+<!--                <groupId>de.codecentric</groupId>-->
+<!--                <artifactId>spring-boot-admin-starter-client</artifactId>-->
+<!--                <version>${spring.boot.admin.version}</version>-->
+<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
