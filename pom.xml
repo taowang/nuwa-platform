@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.study</groupId>
+    <groupId>com.study.nuwa</groupId>
     <artifactId>nuwa-platform</artifactId>
     <name>${project.artifactId}</name>
     <version>1.0-SNAPSHOT</version>
@@ -21,11 +21,11 @@
         <module>nuwa-platform-code-generator</module>
         <module>nuwa-platform-oauth2</module>
         <module>nuwa-platform-cache</module>
-        <module>nuwa-platform-captcha</module>
         <module>nuwa-platform-redis</module>
         <module>nuwa-platform-feign</module>
         <module>nuwa-platform-nacos</module>
         <module>nuwa-platform-sentinel</module>
+        <module>nuwa-platform-monitor-start</module>
     </modules>
 
     <properties>
@@ -39,7 +39,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- 项目统一字符集编码UTF-8 -->
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <!-- SpringBoot版本号 -->
         <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
         <!-- SpringCloud版本号 -->
@@ -58,7 +57,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.study</groupId>
+                <groupId>com.study.nuwa</groupId>
                 <artifactId>nuwa-platform-bom</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>

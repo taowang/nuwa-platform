@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>nuwa-platform</artifactId>
-        <groupId>com.study</groupId>
+        <groupId>com.study.nuwa</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>nuwa-platform-db</artifactId>
     <name>${project.artifactId}</name>
-    <version>${project.parent.version}</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>数据库驱动、数据库连接池的jar包及配置</description>
 
