@@ -2,7 +2,7 @@ package com.study.nuwa.platform.config;
 
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 /**
  * @ClassName: DruidConfig

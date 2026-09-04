@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -17,29 +17,29 @@ import java.time.LocalDateTime;
 @Data
 public class BaseEntity implements Serializable {
 
-    @ApiModelProperty(value = "租户id")
+    @Schema(description = "租户id")
     @TableField(value = "tenant_id")
     private Long tenantId;
 
-    @ApiModelProperty(value = "创建时间")
+    @Schema(description = "创建时间")
     @TableField(value = "create_time", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
 
-    @ApiModelProperty(value = "创建者")
+    @Schema(description = "创建者")
     @TableField(value = "creator", fill = FieldFill.INSERT)
     private Long creator;
 
-    @ApiModelProperty(value = "更新时间")
+    @Schema(description = "更新时间")
     @TableField(value = "update_time", fill = FieldFill.UPDATE)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
 
-    @ApiModelProperty(value = "更新者")
+    @Schema(description = "更新者")
     @TableField(value = "operator", fill = FieldFill.UPDATE)
     private Long operator;
 
-    @ApiModelProperty(value = "1:删除 0:不删除")
+    @Schema(description = "1:删除 0:不删除")
     @TableField("del_flag")
     @TableLogic
     private Integer delFlag;

@@ -12,9 +12,26 @@
     <artifactId>nuwa-platform-cloud</artifactId>
     <name>${project.artifactId}</name>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- 启动 bootstrap.yml 加载（Spring Cloud 2022+ 起需显式引入） -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
         <!-- 为了使用HttpServletRequest和HttpServletResponse -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,6 +64,12 @@
         <dependency>
             <groupId>com.study.nuwa</groupId>
             <artifactId>nuwa-platform-redis</artifactId>
+        </dependency>
+        <!-- AOP 用于 @Aspect 防重复提交等切面 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>

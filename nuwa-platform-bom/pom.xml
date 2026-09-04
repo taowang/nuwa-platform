@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.3.RELEASE</version>
+        <version>3.3.5</version>
         <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -15,13 +15,25 @@
     <artifactId>nuwa-platform-bom</artifactId>
     <name>${project.artifactId}</name>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>pom</packaging>
 
     <properties>
         <!-- jdk版本1.8 -->
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <!-- maven-compiler-plugin插件版本，Java代码编译 -->
-        <maven.plugin.version>3.8.1</maven.plugin.version>
+        <maven.plugin.version>3.13.0</maven.plugin.version>
         <!-- maven编译时指定编码UTF-8 -->
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <!-- 项目统一字符集编码UTF-8 -->
@@ -31,29 +43,33 @@
         <!-- nuwa项目统一设置版本号 -->
         <nuwa.project.version>1.0-SNAPSHOT</nuwa.project.version>
         <!-- mysql数据库驱动 -->
-        <mysql.connector.version>8.0.17</mysql.connector.version>
+        <mysql.connector.version>8.4.0</mysql.connector.version>
         <!-- postgresql数据库驱动 -->
-        <postgresql.connector.version>9.1-901.jdbc4</postgresql.connector.version>
+        <postgresql.connector.version>42.5.5</postgresql.connector.version>
         <!-- 数据库连接池Druid -->
-        <druid.version>1.1.23</druid.version>
+        <druid.version>1.2.23</druid.version>
         <!-- Mybatis Plus增强工具 -->
-        <mybatis.plus.version>3.4.0</mybatis.plus.version>
+        <mybatis.plus.version>3.5.9</mybatis.plus.version>
         <!-- Knife4j Swagger2文档 -->
-        <knife4j.version>3.0.1</knife4j.version>
+        <knife4j.version>4.5.0</knife4j.version>
+        <!-- springdoc-openapi 版本 -->
+        <springdoc.version>2.6.0</springdoc.version>
         <!-- hutool Java常用工具包 -->
-        <hutool.version>5.5.1</hutool.version>
+        <hutool.version>5.8.32</hutool.version>
         <!-- Spring Cloud Alibaba -->
-        <spring.cloud.alibaba>2.2.3.RELEASE</spring.cloud.alibaba>
+        <spring.cloud.alibaba>2023.0.3.2</spring.cloud.alibaba>
         <!-- redisson Redis客户端工具 -->
-        <redisson.version>3.13.6</redisson.version>
+        <redisson.version>3.36.0</redisson.version>
         <!-- Mybatis Plus增强工具代码生成 -->
-        <mybatis.plus.generator.version>3.5.1</mybatis.plus.generator.version>
+        <mybatis.plus.generator.version>3.5.9</mybatis.plus.generator.version>
         <!-- AJ-Captcha滑动验证码 -->
         <captcha.version>1.2.7</captcha.version>
         <!-- Easy-Captcha图形验证码 -->
         <easy.captcha.version>1.6.2</easy.captcha.version>
         <!-- spring-boot-admin 微服务监控-->
-        <spring.boot.admin.version>2.3.0</spring.boot.admin.version>
+        <spring.boot.admin.version>3.3.5</spring.boot.admin.version>
+        <!-- Lombok：编译期生成 @Data / @Slf4j 等，需 JDK 17 兼容版本 -->
+        <lombok.version>1.18.48</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -129,7 +145,7 @@
             <!-- mysql数据库驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
+                <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql.connector.version}</version>
             </dependency>
             <!-- postgresql数据库驱动 -->
@@ -150,13 +166,56 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis.plus.version}</version>
             </dependency>
-            <!-- Swagger2 knife4j bom方式引入 -->
+            <!-- springdoc-openapi + knife4j(jakarta)：替代 springfox -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-dependencies</artifactId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-webflux-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <!-- httpclient：openfeign 实际使用的 HTTP 客户端（SB3 移除自动管理，需要显式声明） -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.5.14</version>
+            </dependency>
+            <!-- Nimbus JOSE+JWT：JWT 编解码 -->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>9.40</version>
+            </dependency>
+            <!-- Lombok：编译期注解处理器 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- json-smart (nimbus 依赖)：常用 JSON 操作 -->
+            <dependency>
+                <groupId>net.minidev</groupId>
+                <artifactId>json-smart</artifactId>
+                <version>2.5.1</version>
+            </dependency>
+            <!-- Google Guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>33.2.1-jre</version>
             </dependency>
             <!-- Spring Cloud Alibaba -->
             <dependency>

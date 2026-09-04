@@ -1,7 +1,7 @@
 package com.study.platform.result;
 
 import com.study.platform.enums.ResultCode;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.util.List;
@@ -16,19 +16,19 @@ import java.util.List;
 @Data
 public class PageResult<T> {
 
-    @ApiModelProperty(value = "是否成功", required = true)
+    @Schema(description = "是否成功")
     private boolean success;
 
-    @ApiModelProperty(value ="响应代码", required = true)
+    @Schema(description = "响应代码")
     private long code;
 
-    @ApiModelProperty(value ="提示信息", required = true)
+    @Schema(description = "提示信息")
     private String msg;
 
-    @ApiModelProperty(value ="总数量", required = true)
+    @Schema(description = "总数量")
     private long count;
 
-    @ApiModelProperty(value ="分页数据")
+    @Schema(description = "分页数据")
     private List<T> data;
 
     public PageResult(long total, List<T> rows) {

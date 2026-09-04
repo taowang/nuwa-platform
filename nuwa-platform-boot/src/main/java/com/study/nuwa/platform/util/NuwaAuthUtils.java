@@ -5,7 +5,7 @@ import com.study.platform.constant.AuthConstant;
 import com.study.platform.domain.NuwaUser;
 import org.springframework.util.StringUtils;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 

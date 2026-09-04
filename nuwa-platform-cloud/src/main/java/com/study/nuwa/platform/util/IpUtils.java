@@ -1,6 +1,6 @@
 package com.study.nuwa.platform.util;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class IpUtils {
     /**

@@ -12,6 +12,18 @@
     <artifactId>nuwa-platform-mybatis</artifactId>
     <name>${project.artifactId}</name>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>jar</packaging>
     <description>管理系统需要用到的持久层框架</description>
 
@@ -32,6 +44,15 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+        <!--
+            JSqlParser: MyBatis Plus 3.5.9 将 TenantLineInnerInterceptor / PaginationInnerInterceptor /
+            BlockAttackInnerInterceptor 等依赖 JSqlParser 的类移到了独立的 jsqlparser 模块中
+        -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-jsqlparser</artifactId>
+            <version>3.5.9</version>
         </dependency>
 
     </dependencies>

@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
  * @author
  */
 @Configuration
-@RequiredArgsConstructor(onConstructor_ = @Autowired)
+@RequiredArgsConstructor()
 @AutoConfigureBefore(MybatisPlusConfig.class)
 public class TenantConfig {
 

@@ -1,8 +1,7 @@
 package com.study.platform.result;
 
 import com.study.platform.enums.ResultCode;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -13,22 +12,22 @@ import lombok.ToString;
  * @Description: 自定义通用响应类
  * @date 2020年09月19日 下午9:24:50
  */
-@ApiModel(description = "通用响应类")
+@Schema(description = "通用响应类")
 @Getter
 @ToString
 @NoArgsConstructor
 public class Result<T> {
 
-    @ApiModelProperty(value = "是否成功", required = true)
+    @Schema(description = "是否成功")
     private boolean success;
 
-    @ApiModelProperty(value = "响应代码", required = true)
+    @Schema(description = "响应代码")
     private long code;
 
-    @ApiModelProperty(value = "提示信息", required = true)
+    @Schema(description = "提示信息")
     private String msg;
 
-    @ApiModelProperty(value = "响应数据")
+    @Schema(description = "响应数据")
     private T data;
 
     /**
