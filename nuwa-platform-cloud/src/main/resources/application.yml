@@ -1,24 +1,13 @@
 spring:
   main:
     allow-bean-definition-overriding: true
-#  cloud:
-#    sentinel:
-#      filter:
-#        enabled: true
-#      transport:
-#        port: 8719
-#        #指定sentinel控制台的地址
-#        dashboard: 127.0.0.1:8858
-#      eager: true
-#      datasource:
-#        ds2:
-#          nacos:
-#            data-type: json # 默认提供两种内置的值，分别是 json 和 xml (不填默认是json)
-#            server-addr: 127.0.0.1:8848
-#            namespace: ac59b1ea-e031-4aaf-a50e-2742b2f3da5f
-#            dataId: ${spring.application.name}-sentinel
-#            groupId: SENTINEL_GROUP
-#            rule-type: flow #rule-type 配置表示该数据源中的规则属于哪种类型的规则(flow流控，degrade熔断降级，authority，system系统保护, param-flow热点参数限流, gw-flow, gw-api-group)
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        # sentinel dashboard 地址（容器内通过 docker DNS 解析，主机/本地可被 env SENTINEL_DASHBOARD 覆盖）
+        dashboard: 127.0.0.1:8858
+      eager: true
   redis:
     database: 1
     port: 6379

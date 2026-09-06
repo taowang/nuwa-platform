@@ -51,16 +51,11 @@
             <groupId>com.study.nuwa</groupId>
             <artifactId>nuwa-platform-base</artifactId>
         </dependency>
-        <!-- Sentinel 使用Nacos配置 -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.csp</groupId>-->
-        <!--            <artifactId>sentinel-datasource-nacos</artifactId>-->
-        <!--        </dependency>-->
-        <!-- Sentinel 高可用流量防护组件 -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.study.nuwa</groupId>-->
-        <!--            <artifactId>nuwa-platform-sentinel</artifactId>-->
-        <!--        </dependency>-->
+        <!-- Sentinel 高可用流量防护组件（提供 dashboard client，规则持久化可另行加 sentinel-datasource-nacos） -->
+        <dependency>
+            <groupId>com.study.nuwa</groupId>
+            <artifactId>nuwa-platform-sentinel</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.study.nuwa</groupId>
             <artifactId>nuwa-platform-redis</artifactId>

@@ -30,6 +30,15 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!--
+            Spring Cloud 2021+ 起 openfeign 不再传递 loadbalancer，必须显式引入
+            否则 Feign 客户端在解析服务名（@FeignClient(name="nuwa-service-system")）时报
+            "No Feign Client for loadBalancing defined"
+        -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
         <!-- 使用Apache HttpClient替换Feign原生httpclient-->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
