@@ -47,6 +47,8 @@
         <spring.boot.version>3.3.5</spring.boot.version>
         <!-- SpringCloud版本号 -->
         <spring.cloud.version>2023.0.3</spring.cloud.version>
+        <!-- Lombok：编译期注解处理器，JDK 17 兼容版本 -->
+        <lombok.version>1.18.48</lombok.version>
 
     </properties>
 
@@ -98,26 +100,26 @@
             </resource>
         </resources>
         <plugins>
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>${maven.plugin.version}</version>
-    <configuration>
-        <source>16</source>
-        <target>16</target>
-        <encoding>UTF-8</encoding>
-        <annotationProcessorPaths>
-            <path>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </path>
-        </annotationProcessorPaths>
-        <compilerArgs>
-            <arg>-parameters</arg>
-        </compilerArgs>
-    </configuration>
-</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

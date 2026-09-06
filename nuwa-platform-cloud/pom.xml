@@ -18,8 +18,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>16</source>
-                    <target>16</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -65,11 +65,10 @@
             <groupId>com.study.nuwa</groupId>
             <artifactId>nuwa-platform-redis</artifactId>
         </dependency>
-        <!-- AOP 用于 @Aspect 防重复提交等切面 -->
+        <!-- AOP 用于 @Aspect 防重复提交等切面（必须传递：本模块就提供 Aspect 类） -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>
